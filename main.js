@@ -68,7 +68,7 @@ function updateInterface(data) {
 
 async function getWeatherData(location) {
     try {
-        const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=9bcfe5344ca84e389a145440240403&q=${location}&days=3`, {mode: 'cors'});
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=9bcfe5344ca84e389a145440240403&q=${location}&days=3`, {mode: 'cors'});
         if (response.status === 400) {
             throw new Error("Couldn't find location: " + location);
         }
