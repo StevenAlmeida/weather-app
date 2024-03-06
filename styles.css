@@ -25,7 +25,7 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
 #location-input {
@@ -74,6 +74,7 @@ h1, h2, h3 {
 
 #main-temp {
     font-size: 66px;
+    cursor: pointer;
 }
 
 #weather {
