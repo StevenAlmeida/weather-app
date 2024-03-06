@@ -62,24 +62,30 @@ h1, h2, h3 {
     height: calc(100vh - var(--top-bar-size));
 }
 
+#main .wrapper {
+    position: relative;
+    top: -20px;
+}
+
 #city-name {
-    font-size: 80px;
-    margin-bottom: -20px;
+    font-size: 120px;
+    margin-bottom: -5px;
+    line-height: .9em;
 }
 
 #country-name {
-    font-size: 42px;
+    font-size: 60px;
     margin-bottom: -5px;
 }
 
 #main-temp {
-    font-size: 66px;
+    font-size: 92px;
     cursor: pointer;
 }
 
 #weather {
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
 .farenheit::after {
@@ -102,7 +108,7 @@ h1, h2, h3 {
 }
 
 .info-item {
-    font-size: 16px;
+    font-size: 22px;
 }
 
 .uppercase {
