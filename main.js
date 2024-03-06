@@ -7,6 +7,7 @@ const wind = document.getElementById('wind');
 const humidity = document.getElementById('humidity');
 const locationInput = document.getElementById('location-input');
 const searchButton = document.getElementById('search-button');
+const body = document.querySelector("body");
 
 let currentLocation = "";
 let tempMeasurement = "f";
@@ -35,6 +36,15 @@ function updateInterface(data) {
     feelsLike.textContent = `FEELS LIKE: ${Math.round(+data.current[`feelslike_${tempMeasurement}`])}`;
     wind.textContent = `WIND: ${data.current.wind_mph} MPH`
     humidity.textContent = `HUMIDITY: ${data.current.humidity}%`;
+
+    const hour = data.location.localtime.split(" ")[1].split(":")[0];
+    if (hour > 6 && hour < 18) {
+        body.classList.add("day-clear");
+        body.classList.remove("night-clear");
+    } else {
+        body.classList.add("night-clear");
+        body.classList.remove("day-clear");
+    }
 }
 
 async function getWeatherData(location) {
@@ -47,8 +57,10 @@ async function getWeatherData(location) {
         return weatherData;
     }
     catch (error) {
-        throw new Error("Couldn't find location: " + location);
+        throw new Error(error);
     }
 }
 
-getWeatherData("ireland");
+getWeatherData("Fall River").then(data => {
+    updateInterface(data);
+});
