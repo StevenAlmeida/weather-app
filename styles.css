@@ -1,3 +1,8 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url(fonts/BebasNeue-Regular.otf);
+}
+
 :root {
     --top-bar-size: 50px;
 }
@@ -7,6 +12,11 @@
     margin: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: BebasNeue;
+    letter-spacing: 2px;
 }
 
 #top-bar {
@@ -19,4 +29,54 @@
     justify-content: center;
     align-items: center;
     height: calc(100vh - var(--top-bar-size));
+}
+
+#city-name {
+    font-size: 80px;
+    margin-bottom: -20px;
+}
+
+#country-name {
+    font-size: 42px;
+    margin-bottom: -5px;
+}
+
+#main-temp {
+    font-size: 66px;
+}
+
+#weather {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.farenheit::after {
+    content: '\00B0 F';
+}
+
+.celsius::after {
+    content: '\00B0 C';
+}
+
+#main-temp::after {
+    font-size: 28px;
+    vertical-align: top;
+}
+
+#weather-info {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.info-item {
+    font-size: 16px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.center {
+    text-align: center;
 }

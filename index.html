@@ -9,12 +9,23 @@
 </head>
 <body>
     <div id="top-bar">
-        <input type="text">
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input id="location-input" type="text">
+        <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
     <div id="main">
-        <h1 id="city-name">Fall River</h1>
-        <h2 id="country-name">Massachusetts</h2>
+        <div class="wrapper">
+            <h1 id="city-name" class="uppercase center">Fall River</h1>
+            <h2 id="country-name" class="uppercase center">Massachusetts</h2>
+            <p id="weather" class="uppercase center">Partly Cloudy</p>
+            <div id="weather-info">
+                <h3 id="main-temp" class="farenheit">40</h3>
+                <div id="other-info">
+                    <p id="feels-like" class="info-item farenheit">FEELS LIKE: 30</p>
+                    <p id="wind" class="info-item">WIND: 8 MPH</p>
+                    <p id="humidity" class="info-item">HUMIDITY: 87%</p>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
